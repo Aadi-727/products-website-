@@ -18,4 +18,5 @@
 	--clr-sec-white: hsl(0, 0%, 100%);
 	--clr-sec-black1: hsl(0, 0%, 0%);
 	--shadow-light: 0 1px 3px rgba(0, 0, 0, 0.01);
+	--shadow-orange: 0 3px 10px rgba(255, 125, 26, 0.7);
 }

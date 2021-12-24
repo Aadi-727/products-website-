@@ -1,10 +1,12 @@
 .showcase {
 	display: flex;
 	margin: 3rem 0;
-
 	align-items: center;
-	justify-content: space-around;
+	gap: 7rem;
+
+	justify-content: center;
 	width: 100%;
+	height: 100%;
 }
 .showcase__main-image {
 	--val: 25rem;
@@ -12,11 +14,12 @@
 	width: var(--val);
 	height: var(--val);
 	overflow: hidden;
+	padding: 0;
 }
 .showcase__main-image img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
+	object-fit: cover;
 }
 
 .showcase__image-thumbnail {
@@ -31,18 +34,73 @@
 	width: var(--val);
 	height: var(--val);
 	overflow: hidden;
+	position: relative;
+	transition: border 200ms ease;
+	border-radius: 30px;
+	cursor: pointer;
 }
-.showcase__image-thumbnail .thumbnail__sm:hover {
-	border: 2px solid hsl(26, 100%, 55%);
+.thumbnail__current {
+	opacity: 50%;
 }
-
-.showcase__image-thumbnail .thumbnail__sm:hover .thumbnail__sm {
-	display: none;
+.thumbnail__sm:hover {
+	border: 2px solid var(--clr-primary-orange);
+}
+.thumbnail__sm:hover > img {
+	opacity: 50%;
 }
 
 .showcase__image-thumbnail .thumbnail__sm img {
 	width: 100%;
 	height: 100%;
+	padding: 0;
+	margin: 0;
+	object-fit: cover;
+	cursor: pointer;
+	pointer-events: none;
+}
+.operations {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	max-width: 50ch;
+	margin: 3rem 0 0 0;
+}
+.showcase__right {
+	max-width: 45ch;
+}
+.showcase__right p {
+	color: var(--clr-sec-dark-grayish-blue);
+	word-wrap: break-word;
+	word-break: normal;
+	margin: 0 0 1rem 0;
+}
+.showcase__right h6 {
+	color: var(--clr-primary-orange);
+	margin: 0 0 1rem 0;
+}
+.showcase__right h1 {
+	line-height: 1;
+	margin: 0 0 1rem 0;
+}
+.price__amount {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	font-size: 1.5rem;
+}
+.price__amount .offer {
+	background: var(--clr-primary-pale-orange);
+	color: var(--clr-primary-orange);
+	padding: 0.5rem;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 0.8rem;
+}
+.price__grey {
+	color: var(--clr-sec-grayish-blue);
+	text-decoration: line-through;
+	font-weight: 700;
 }
 @media (max-width: 768px) {
 	.showcase {

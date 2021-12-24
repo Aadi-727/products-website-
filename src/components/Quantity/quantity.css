@@ -1,0 +1,19 @@
+.quantity {
+	background: var(--clr-sec-light-grayish-blue);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0.7rem 1rem;
+
+	width: 10rem;
+}
+.value {
+	font-size: 1rem;
+}
+.value__op {
+	--val: 1.7rem;
+	width: var(--val);
+	height: var(--val);
+	color: var(--clr-primary-orange);
+}
