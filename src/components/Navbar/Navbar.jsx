@@ -1,10 +1,11 @@
 import "./Navbar.css";
-import { logo, cart, avatar } from "../imports";
+import { logo, cart, avatar, ham } from "../imports";
 const Navbar = () => {
 	return (
 		<nav className="navbar">
 			{/* Logo */}
 			<div className="navbar__left">
+				<img src={ham} alt="Open Side menu" className="menu__ham" />
 				<img className="navbar__logo" src={logo} alt="Sneakers logo" />
 				{/* Nav links */}
 				<ul className="navbar__nav-items">

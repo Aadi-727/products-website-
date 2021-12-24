@@ -1,20 +1,26 @@
 .navbar {
 	display: flex;
-	border-bottom: 3px solid var(--clr--sec-light-grayish-blue);
+	border-bottom: 3px solid var(--clr-sec-light-grayish-blue);
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 0 0.4em 0;
-	width: 100%;
+	padding: 0 0 0.1em 0;
 }
 
-/* Left */
+/* ------------------------------------------------ */
 
+/*? Left */
+.menu__ham {
+	display: none;
+}
 .navbar .navbar__logo {
 	display: inline;
 	--val: 7em;
-
 	width: var(--val);
 	height: var(--val);
+	transition: transform 100ms ease;
+}
+.navbar .navbar__logo:hover {
+	transform: scale(1.03);
 }
 .navbar .navbar__left {
 	display: flex;
@@ -34,25 +40,83 @@
 
 .navbar .navbar__nav-items > li {
 	margin: 0rem 0.7rem;
+	width: 100%;
+	display: block;
 	list-style: none;
+	transition: border 150ms ease-in-out;
+}
+
+.navbar .navbar__nav-items > li:hover {
+	border-radius: 7px;
+	border-bottom: 5px solid var(--clr-primary-orange);
 }
 
 .navbar .navbar__nav-items > li > a {
-	color: var(--clr--sec-dark-grayish-blue);
+	color: var(--clr-sec-dark-grayish-blue);
 	text-decoration: none;
+	transition: color 150ms ease-in;
+	display: block;
+}
+.navbar .navbar__nav-items > li > a:hover {
+	color: var(--clr-primary-orange);
 }
 
-/* Right */
+/* ------------------------------------------------ */
 
+/** Right */
 .navbar .navbar__right .navbar__actions {
 	display: flex;
 }
+
+/*? Cart */
 .navbar .navbar__right .navbar__actions .icon__cart {
 	object-fit: contain;
-	margin: 0 4rem;
+	margin: 0 2rem;
+	transition: all 100ms ease;
 }
+.navbar .navbar__right .navbar__actions .icon__cart:hover {
+	transform: translate(0.3rem) rotate(90deg);
+	color: var(--clr-primary-pale-orange);
+}
+
+/*? Avatar */
 .navbar .navbar__right .navbar__actions .avatar {
 	--val: 2.5em;
 	width: var(--val);
 	height: var(--val);
+}
+
+/* Media */
+
+@media (max-width: 769px) {
+	.navbar .navbar__nav-items {
+		background: #fff;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		position: absolute;
+		height: 100%;
+		padding-right: 5rem;
+		top: 0;
+		left: 0;
+		z-index: 100;
+	}
+	.navbar .navbar__nav-items > li:first-child {
+		margin-top: 5rem;
+	}
+	.navbar .navbar__nav-items > li {
+		margin-bottom: 1rem;
+	}
+	.navbar .navbar__nav-items a {
+		color: var(--clr-sec-very-dark-blue) !important;
+		font-weight: 700;
+	}
+	.menu__ham {
+		position: absolute;
+		display: block;
+		--val: 1.2em;
+		width: var(--val);
+		height: var(--val);
+		inset: 3rem 0 0 3rem;
+	}
 }
