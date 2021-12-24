@@ -12,3 +12,9 @@ body {
 .App {
 	min-width: 80vw;
 }
+
+@media (max-width: 768px) {
+	.App {
+		min-width: 100vw;
+	}
+}
